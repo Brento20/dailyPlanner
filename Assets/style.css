@@ -76,8 +76,20 @@ textarea {
   border-style: dotted;
   border-width: 2px;
   border-color: #5d5d5d;
+  border-right: none;
   background-color: #ececec;
   border-radius: 20% 0 0 20%;
   text-align: right;
-  padding-top: 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.plannerBox {
+  min-height: 20px;
+  width: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #5d5d5d;
+  background-color: #ececec;
+  text-align: left;
+  padding: 10px 10px 10px 10px;
 }
