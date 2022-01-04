@@ -1,5 +1,16 @@
-var currentDay = document.getElementById("currentDay");
-var currentDayMJS = moment().format("dddd, MMMM Do YYYY");
+$(document).ready(function() {
+    $("button").hover(function(){
+        $(this).css("background-color", "green");
+    },
+    function(){
+        $(this).css("background-color", "#06aed5");
+    });
+
+    $("button").click(function(){
+        $(this).css("background-color", "gold")
+
+    })
+});
 
 
 setInterval(pushTime, 1000);
@@ -8,14 +19,35 @@ function pushTime() {
     currentDay.innerHTML = ("Today is " + tempTimeMJS); 
 }
 
+var currentDay = document.getElementById("currentDay");
+var currentDayMJS = moment().format("dddd, MMMM Do YYYY");
+var saveButton = document.getElementsByClassName("saveBtn")
+
+//Storage 
+var entries = {
+    "08": [],
+    "09": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": [],
+    "17": [],
+};
+
+
 
 
 function timerRecolor(){
-    var hourMJS = moment().format("H")
+    var hourMJS = moment().format("H");
     
+}
 
-    console.log(hourMJS)
+function writeEntry(){
 
 }
+
 
 timerRecolor();
