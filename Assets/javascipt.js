@@ -43,7 +43,6 @@ $(document).ready(function() {
 
 
 
-
 // functions 
 
 setInterval(pushTime, 1000);
@@ -109,43 +108,36 @@ function saveEntry10(){
 function saveEntry11(){
     var entry = planner11.val();
     localStorage.setItem("11", entry);
-    renderLastEntry();
 }
 
 function saveEntry12(){
     var entry = planner12.val();
     localStorage.setItem("12", entry);
-    renderLastEntry();
 }
 
 function saveEntry13(){
     var entry = planner13.val();
     localStorage.setItem("13", entry);
-    renderLastEntry();
 }
 
 function saveEntry14(){
     var entry = planner14.val();
     localStorage.setItem("14", entry);
-    renderLastEntry();
 }
 
 function saveEntry15(){
     var entry = planner15.val();
     localStorage.setItem("15", entry);
-    renderLastEntry();
 }
 
 function saveEntry16(){
     var entry = planner16.val();
     localStorage.setItem("16", entry);
-    renderLastEntry();
 }
 
 function saveEntry17(){
     var entry = planner17.val();
     localStorage.setItem("17", entry);
-    renderLastEntry();
 }
 
 
@@ -159,3 +151,4 @@ function timerRecolor(){
 // Call functions on load
 
 renderLastEntry();
+timerRecolor();
