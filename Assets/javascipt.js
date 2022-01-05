@@ -22,33 +22,26 @@ function pushTime() {
 var currentDay = document.getElementById("currentDay");
 var currentDayMJS = moment().format("dddd, MMMM Do YYYY");
 var saveButton = document.getElementsByClassName("saveBtn");
-var plannerEl = $('input[name="08"]');
+var planner08 = $('input[name="08"]');
+var testZone = document.getElementById("testZone");
 
+renderLastEntry();
 
-//Storage 
-var entries = {
-    "08": [],
-    "09": [],
-    "10": [],
-    "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
-    "15": [],
-    "16": [],
-    "17": [],
-};
+function renderLastEntry(){
+    var entryRender = localStorage.getItem("8AM");
+    testZone.textContent = entryRender;
+}
 
+function saveEntry(){
+var entry = planner08.val();
+localStorage.setItem("8AM", entry);
+renderLastEntry();
 
+}
 
 
 function timerRecolor(){
-    var hourMJS = moment().format("H");
+
     
 }
 
-function writeEntry(){
-    event.preventDefault();
-    console.log(plannerEl.val());
-
-}
