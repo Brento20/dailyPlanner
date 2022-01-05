@@ -2,13 +2,13 @@ $(document).ready(function() {
     $("button").hover(function(){
         $(this).css("background-color", "green");
     },
+
     function(){
         $(this).css("background-color", "#06aed5");
     });
 
     $("button").click(function(){
-        $(this).css("background-color", "gold")
-
+        $(this).css("background-color", "gold");
     })
 });
 
@@ -21,7 +21,9 @@ function pushTime() {
 
 var currentDay = document.getElementById("currentDay");
 var currentDayMJS = moment().format("dddd, MMMM Do YYYY");
-var saveButton = document.getElementsByClassName("saveBtn")
+var saveButton = document.getElementsByClassName("saveBtn");
+var plannerEl = $('input[name="08"]');
+
 
 //Storage 
 var entries = {
@@ -46,8 +48,7 @@ function timerRecolor(){
 }
 
 function writeEntry(){
+    event.preventDefault();
+    console.log(plannerEl.val());
 
 }
-
-
-timerRecolor();
