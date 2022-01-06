@@ -141,8 +141,25 @@ function saveEntry17(){
 }
 
 
-function timerRecolor(){
+function timeRecolor(){
 
+    var timeOfDay = document.getElementsByClassName("timeSlot");
+    
+    var currentHour = 12// parseInt(moment().format('H')); 
+    console.log(currentHour);
+
+Array.from(timeOfDay).forEach(hour => {
+    console.log(hour.dataset);
+    if (currentHour == hour.dataset.hour) {
+        $(hour).next().addClass("present"); //Current Hour
+    } else if ((currentHour < hour.dataset.hour)) {
+        $(hour).next().addClass("future"); //Future Hour/s
+    } else { 
+        $(hour).next().addClass("past"); //Past Hour 
+    }
+});
+
+    
     
 }
 
@@ -151,4 +168,4 @@ function timerRecolor(){
 // Call functions on load
 
 renderLastEntry();
-timerRecolor();
+timeRecolor();
