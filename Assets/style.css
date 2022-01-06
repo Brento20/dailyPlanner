@@ -88,3 +88,8 @@ textarea {
   text-align: left;
   padding: 10px 10px 10px 10px;
 }
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: .6;
+}

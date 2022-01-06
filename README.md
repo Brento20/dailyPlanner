@@ -21,7 +21,7 @@ SO THAT I can manage my time effectively
 |Time is displayed from moment.js|Done|
 |You can enter text and save it to local storage|Done|
 |Entries remain after refreshing the page |Done|
-|Time blocks are color coded for present/future|Still working on|
+|Time blocks are color coded for present/future|Done|
 |Final product closely matches provided screenshots|Done|
 
 
@@ -34,5 +34,14 @@ SO THAT I can manage my time effectively
 4. Build a text input for tasks, have the input set to local storage as an array like (time, comment).
 5. Get local storage to fill the text box on load.
 
+## Future improvements
 
-## Images of application
+1. Use an API to feed in random quotes for each day
+2. Code in a clear button
+3. work on functionality to add full weeks and months.
+4. Add a toggle for light mode an dark mode with more customized CSS
+
+
+## Image of application
+
+![Working application](./Assets/images/working.png)
