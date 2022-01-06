@@ -143,24 +143,21 @@ function saveEntry17(){
 
 function timeRecolor(){
 
-    var timeOfDay = document.getElementsByClassName("timeSlot");
+    var timeOfDay = document.getElementsByClassName("timeOfDay");
+    var currentHour = parseInt(moment().format('H')); 
     
-    var currentHour = 12// parseInt(moment().format('H')); 
-    console.log(currentHour);
 
 Array.from(timeOfDay).forEach(hour => {
-    console.log(hour.dataset);
-    if (currentHour == hour.dataset.hour) {
-        $(hour).next().addClass("present"); //Current Hour
-    } else if ((currentHour < hour.dataset.hour)) {
-        $(hour).next().addClass("future"); //Future Hour/s
-    } else { 
-        $(hour).next().addClass("past"); //Past Hour 
-    }
-});
+        
+        if (currentHour == hour.dataset.hour) {
+            $(hour).next().addClass("present");
+        } else if ((currentHour < hour.dataset.hour)) {
+            $(hour).next().addClass("future");
+        } else { 
+            $(hour).next().addClass("past");
+        }
 
-    
-    
+    });  
 }
 
 
