@@ -1,5 +1,25 @@
-//Global variables
 
+/////////////////////
+// Table of contents
+/////////////////////
+
+//1.) Global variables - I wanted to make the code for this more "dry" but i caught the covid and I just focused on functionality. 
+                    // - A lot of the repeated 06,07,08 ect code should have been replaced.
+
+//2.) Button Effects - jquery for adding css properties to the buttons, I wanted to try this instead of the hover property in css because i wanted to learn more.
+
+//3.) Time and Date - moment.js and a set interval to refresh it on the page so the user can see the exact time without refreshing the page.
+
+//4.) Get Local Storage - Get local storage for the time slots and render the information.
+
+//5.) Save to Local Storage - This code could have been written more "dry", each button currently is attached to its own function to save.
+
+//6.) Recolor time blocks - Looping through the time blocks and comparing the moment.js time to the hours allocated to the time block.
+                    // N.B Liam, David (instructor David) and I worked on this during office hours.
+
+
+
+//1.) Global variables
 var currentDay = document.getElementById("currentDay");
 var currentDayMJS = moment().format("dddd, MMMM Do YYYY");
 var saveButton = document.getElementsByClassName("saveBtn");
@@ -26,7 +46,7 @@ var print15 = document.querySelector("#print15");
 var print16 = document.querySelector("#print16");
 var print17 = document.querySelector("#print17");
 
-
+//2.) Button Effects 
 $(document).ready(function() {
     $("button").hover(function(){
         $(this).css("background-color", "green");
@@ -41,16 +61,14 @@ $(document).ready(function() {
     })
 });
 
-
-
-// functions 
-
+//3.) Time and Date 
 setInterval(pushTime, 1000);
 function pushTime() {
     var tempTimeMJS= moment().format("dddd, Do MMMM YYYY, h:mm:ss a");
     currentDay.innerHTML = ("Today is " + tempTimeMJS); 
 }
 
+//4.) Get Local Storage 
 function renderLastEntry(){
 
     
@@ -87,10 +105,11 @@ function renderLastEntry(){
     
 }
 
+
+//5.) Save to Local Storage 
 function saveEntry8(){
     var entry = planner08.val();
-    localStorage.setItem("8", entry);
-    
+    localStorage.setItem("8", entry); 
 }
 
 function saveEntry9(){
@@ -140,12 +159,10 @@ function saveEntry17(){
     localStorage.setItem("17", entry);
 }
 
-
+//6.) Recolor time blocks
 function timeRecolor(){
-
     var timeOfDay = document.getElementsByClassName("timeOfDay");
     var currentHour = parseInt(moment().format('H')); 
-    
 
 Array.from(timeOfDay).forEach(hour => {
         
@@ -156,7 +173,6 @@ Array.from(timeOfDay).forEach(hour => {
         } else { 
             $(hour).next().addClass("past");
         }
-
     });  
 }
 
